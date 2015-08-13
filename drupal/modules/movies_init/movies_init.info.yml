@@ -1,0 +1,12 @@
+name: Movies Init
+description: Set up your site as a movies galery.
+package: Custom
+type: module
+version: 1.0
+core: 8.x
+dependencies:
+  - basic_auth
+  - hal
+  - rest
+  - serialization
+  - cors

@@ -1,0 +1,8 @@
+# The routes of the project.
+#
+# Each route describes how an incoming URL is going
+# to be processed by Platform.sh.
+
+"http://drupal.{default}/":
+    type: upstream
+    upstream: "drupal:php"

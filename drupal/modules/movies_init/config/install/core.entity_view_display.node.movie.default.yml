@@ -1,0 +1,37 @@
+uuid: bf94d374-5790-48f7-8f00-cb988549e913
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.movie.body
+    - field.field.node.movie.field_youtube_url
+    - node.type.movie
+  module:
+    - link
+    - text
+    - user
+id: node.movie.default
+targetEntityType: node
+bundle: movie
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_youtube_url:
+    weight: 102
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  links:
+    weight: 100
+hidden: {  }

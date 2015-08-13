@@ -1,0 +1,63 @@
+# This file describes an application. You can have multiple applications
+# in the same project.
+
+# The name of this app. Must be unique within a project.
+name: drupal
+
+# The runtime the application uses.
+type: "php:5.5"
+
+# Configuration of the build of this application.
+build:
+    flavor: drupal
+
+# The build-time dependencies of the app.
+# Note: Drush 7.0.0 (stable) is released, but it purposefully does not work
+# with Drupal 8.
+dependencies:
+    php:
+        "drush/drush": "8.0.0-beta12"
+
+# The relationships of the application with services or other applications.
+# The left-hand side is the name of the relationship as it will be exposed
+# to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
+# side is in the form `<service name>:<endpoint name>`.
+relationships:
+    database: "mysql:mysql"
+
+# The configuration of app when it is exposed to the web.
+web:
+    # The public directory of the app, relative to its root.
+    document_root: "/"
+    # The front-controller script to send non-static requests to.
+    passthru: "/index.php"
+
+# The size of the persistent disk of the application (in MB).
+disk: 2048
+
+# The mounts that will be performed when the package is deployed.
+mounts:
+    "/public/sites/default/files": "shared:files/files"
+    "/tmp": "shared:files/tmp"
+    "/config": "shared:files/config"
+    "/private": "shared:files/private"
+
+# The hooks executed at various points in the lifecycle of the application.
+hooks:
+    build: |
+      # Drush doesn't work here for some reason: 'drush composer-manager-init'
+      php public/modules/composer_manager/scripts/init.sh
+      cd public/core
+      composer drupal-update
+    deploy: |
+      # Drupal 8 currently fails to create config directories automatically during install.
+      mkdir -p config/active config/staging
+      cd public
+      drush -y site-install --account-pass=admin
+      drush -y en movies_init
+
+# The configuration of scheduled execution.
+crons:
+    drupal:
+        spec: "*/20 * * * *"
+        cmd: "cd public ; drush core-cron"
