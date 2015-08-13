@@ -6,3 +6,7 @@
 "http://drupal.{default}/":
     type: upstream
     upstream: "drupal:php"
+
+"http://{default}/":
+    type: upstream
+    upstream: "angular:php"
