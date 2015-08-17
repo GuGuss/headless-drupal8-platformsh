@@ -19,7 +19,7 @@ angular
   ])
   // Should be loaded from a specific config.json.
   .run(function($rootScope) {
-    $rootScope.baseUrl = "http://drupal---cors-7o6mkngj4xhyk.us.platform.sh";
+    $rootScope.baseUrl = "http://drupal---master-wibjys76j7zfu.us.platform.sh";
   })
   .filter('safe', function($sce) {
     return function(html) {
