@@ -1,8 +1,16 @@
 # Headless Drupal 8 & AngularJS on Platform.sh
 
-This is a working example of a Headless Drupal 8 & AngularJS, working on Platform.sh.
+## Overview
 
-It reuses some code from a session in [DrupalCon Los Angeles 2015](https://www.youtube.com/watch?v=0ARnhwcI74g) from [Travis Tidwell](https://github.com/travist/).
+This project is a working example of a Headless Drupal 8 & AngularJS, working on Platform.sh. It reuses some code from a session in [DrupalCon Los Angeles 2015](https://www.youtube.com/watch?v=0ARnhwcI74g) from [Travis Tidwell](https://github.com/travist/).
+
+The Drupal site is used as a backend to store a collection of videos and serving a RESTful API at ``/movie``, whereas the Angular site is used as a frontend to consume the API and display the videos.
+
+The repository is clearly separated in two distinct applications which have each their own Platform.sh configuration file:
+* [Angular configuration](https://github.com/GuGuss/headless-drupal8-angular-platformsh/blob/master/angular/.platform.app.yaml)
+* [Drupal configuration](https://github.com/GuGuss/headless-drupal8-angular-platformsh/blob/master/drupal/.platform.app.yaml)
+
+It's a great starting point to learn about **Drupal 8 best practices** (*Drush make file, RESTful services...*) and **AngularJS best practices** (*Grunt, Yeoman...*).
 
 ## Tools
 
