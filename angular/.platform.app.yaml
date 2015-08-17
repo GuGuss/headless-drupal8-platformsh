@@ -103,4 +103,4 @@ hooks:
       bower install
       grunt build
     deploy: |
-      mv constants.js app/scripts/read-write/
+      cp constants.js app/scripts/read-write/
