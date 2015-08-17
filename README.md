@@ -12,6 +12,12 @@ The repository is clearly separated in two distinct applications which have each
 
 It's a great starting point to learn about **Drupal 8 best practices** (*Drush make file, RESTful services...*) and **AngularJS best practices** (*Grunt, Yeoman...*).
 
+## Demo
+
+[Click here]](http://master-wibjys76j7zfu.us.platform.sh/) to see the Angular frontend.
+
+[Click here]](http://drupal---master-wibjys76j7zfu.us.platform.sh/movie) to access the RESTful API provided by Drupal 8.
+
 ## Tools
 
 ### Platform.sh
