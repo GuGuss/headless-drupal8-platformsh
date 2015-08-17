@@ -15,10 +15,11 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'constants'
   ])
   // Should be loaded from a specific config.json.
-  .run(function($rootScope) {
+  .run(function($rootScope, CONSTANTS) {
     $rootScope.baseUrl = CONSTANTS.baseUrl;
   })
   .filter('safe', function($sce) {
