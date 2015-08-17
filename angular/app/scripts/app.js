@@ -19,9 +19,9 @@ angular
     'constants'
   ])
   // Should be loaded from a specific config.json.
-  .run(function($rootScope, CONSTANTS) {
+  .run(['$rootScope', 'CONSTANTS', function($rootScope, CONSTANTS) {
     $rootScope.baseUrl = CONSTANTS.baseUrl;
-  })
+  }])
   .filter('safe', function($sce) {
     return function(html) {
       return $sce.trustAsHtml(html);
