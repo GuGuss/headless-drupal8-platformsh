@@ -52,9 +52,10 @@ hooks:
     deploy: |
       # Drupal 8 currently fails to create config directories automatically during install.
       mkdir -p config/active config/staging
-      cd public
-      drush -y site-install --account-pass=admin
-      drush -y en movies_init
+      # No need to reinstall the site again.
+      #cd public
+      #drush -y site-install --account-pass=admin
+      #drush -y en movies_init
 
 # The configuration of scheduled execution.
 crons:
