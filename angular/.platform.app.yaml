@@ -84,6 +84,10 @@ web:
 # The size of the persistent disk of the application (in MB).
 disk: 512
 
+# The mounts that will be performed when the package is deployed.
+mounts:
+    "/app/scripts/read-write": "shared:files/read-write"
+
 # Install required dependencies to build the application.
 dependencies:
   ruby:
@@ -98,3 +102,5 @@ hooks:
       npm install
       bower install
       grunt build
+    deploy: |
+      mv constants.js app/scripts/read-write/
