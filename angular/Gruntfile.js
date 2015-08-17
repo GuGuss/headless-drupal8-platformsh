@@ -462,6 +462,14 @@ module.exports = function (grunt) {
     grunt.task.run(['serve:' + target]);
   });
 
+  // Get PLATFORM_ROUTES to populate the Angular $rootScope.baseUrl.
+  grunt.registerTask('platform_routes', 'Get PLATFORM_ROUTES', function() {
+    var base64 = require('base-64');
+    //var decoded = base64.decode(process.env.PLATFORM_ROUTES);
+    //grunt.log.writeln(decoded).ok();
+    grunt.log.writeln(process.env.PLATFORM_ROUTES); // This is "undefined"
+  });
+
   grunt.registerTask('test', [
     'clean:server',
     'wiredep',
@@ -486,7 +494,8 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'platform_routes'
   ]);
 
   grunt.registerTask('default', [
