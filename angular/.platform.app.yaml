@@ -104,5 +104,4 @@ hooks:
       grunt build
     deploy: |
       cp constants.js app/scripts/read-write/
-      cd /app/scripts/read-write
-      sed -i 's/%%REPLACEME%%/PLATFORM_ROUTES/g' constants.js
+      sed -i 's/%%REPLACEME%%/PLATFORM_ROUTES/g' /app/scripts/read-write/constants.js
