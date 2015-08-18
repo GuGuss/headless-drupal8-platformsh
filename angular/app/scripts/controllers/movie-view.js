@@ -13,4 +13,9 @@ angular.module('angularApp')
     $http.get($rootScope.baseUrl + '/movie/' + $routeParams.id).success(function(result) {
     	$scope.movie = result[0];
     });
+    this.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
+    ];
   });
