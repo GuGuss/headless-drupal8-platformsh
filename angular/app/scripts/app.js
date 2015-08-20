@@ -15,12 +15,13 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'constants'
   ])
   // Should be loaded from a specific config.json.
-  .run(function($rootScope) {
-    $rootScope.baseUrl = "http://drupal---master-wibjys76j7zfu.us.platform.sh";
-  })
+  .run(['$rootScope', 'CONSTANTS', function($rootScope, CONSTANTS) {
+    $rootScope.baseUrl = CONSTANTS.baseUrl;
+  }])
   .filter('safe', function($sce) {
     return function(html) {
       return $sce.trustAsHtml(html);
