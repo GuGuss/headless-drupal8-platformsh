@@ -92,9 +92,20 @@ dependencies:
     grunt-cli: "~0.1.13"
     bower: "1.4.1"
 
+# The mounts that will be performed when the package is deployed.
+mounts:
+    "/dist/scripts/read-write": "shared:files/read-write"
+
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
     build: |
       npm install
       bower install
       grunt build
+      mkdir -p dist/scripts/read-write
+    deploy: |
+      cp constants.js dist/scripts/read-write/
+      # We need to hardcode the "drupal" name because the Angular application 
+      # doesn't know about the Drupal application.
+      DRUPAL_BASE_URL=$(php -r "\$keys=array_keys(json_decode(base64_decode(getenv('PLATFORM_ROUTES')),true));\$key=array_filter(\$keys,function(\$k){return preg_match('/^https:\/\/drupal--/', \$k);});echo str_replace('/', '\\/', current(\$key));")
+      sed -i "s/%%REPLACEME%%/$DRUPAL_BASE_URL/g" dist/scripts/read-write/constants.js

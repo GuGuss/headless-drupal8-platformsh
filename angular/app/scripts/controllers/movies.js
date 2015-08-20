@@ -11,7 +11,7 @@ angular.module('angularApp')
   .controller('MoviesCtrl', function ($scope, $rootScope, $http) {
     $rootScope.activeNav = 'movies';
     $scope.movies = [];
-    $http.get($rootScope.baseUrl + '/movie').success(function(result) {
+    $http.get($rootScope.baseUrl + 'movie').success(function(result) {
     	$scope.movies = result;
     });
     this.awesomeThings = [

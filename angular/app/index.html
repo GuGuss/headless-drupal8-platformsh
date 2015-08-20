@@ -70,6 +70,9 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+        <!-- Don't put the constants file in the aggregate since we'll make it writable on its own. -->
+        <script src="scripts/read-write/constants.js"></script>
+        
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
