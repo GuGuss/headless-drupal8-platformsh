@@ -18,6 +18,10 @@ It's a great starting point to learn about **Drupal 8 best practices** (*Drush m
 
 [Click here](http://drupal---master-wibjys76j7zfu.us.platform.sh/movie) to access the RESTful API provided by Drupal 8.
 
+## Issue
+
+A [remaining issue](https://github.com/GuGuss/headless-drupal8-angular-platformsh/issues/1) is blocking branching the environment since the Drupal API needs to be dynamically populated.
+
 ## Tools
 
 ### Platform.sh
