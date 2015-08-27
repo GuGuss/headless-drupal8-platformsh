@@ -22,16 +22,22 @@ It's a great starting point to learn about **Drupal 8 best practices** (*Drush m
 
 ### Platform.sh
 
+![Platform.sh](https://raw.githubusercontent.com/GuGuss/headless-drupal8-angular-platformsh/master/platformsh.png)
+
 [Platform.sh](https://platform.sh/) is a groundbreaking, award-winning hosting and development tool for web applications. It extends a branch-merge workflow to infrastructure so that every branch can be tested as if it were in production, and it scales up to the largest sites.Support multiple application.
 
 It natively supports deploying multiple applications which makes it the perfect tool for this example.
 
 ### AngularJS
 
+![Angular Grunt Yeoman](https://raw.githubusercontent.com/GuGuss/headless-drupal8-angular-platformsh/master/ang_grunt_yo.png)
+
 [AngularJS](https://www.angularjs.org/) is an open-source web application framework maintained by Google and by a community of individual developers and corporations to address many of the challenges encountered in developing single-page applications.
 
 In this example, we use [Yeoman](http://yeoman.io/) which helps you to kickstart new projects, prescribing best practices and tools to help you stay productive.
 
 ### Drupal 8
+
+![Drupal 8](https://raw.githubusercontent.com/GuGuss/headless-drupal8-angular-platformsh/master/drupal.png)
 
 [Drupal](https://drupal.org/) is an open source content management platform powering millions of websites and applications. It’s built, used, and supported by an active and diverse community of people around the world.
