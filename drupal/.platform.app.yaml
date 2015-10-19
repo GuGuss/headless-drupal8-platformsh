@@ -47,8 +47,8 @@ hooks:
     build: |
       # Drush doesn't work here for some reason: 'drush composer-manager-init'
       php public/modules/composer_manager/scripts/init.php
-      cd public
-      composer drupal-install
+      cd public/code
+      composer drupal-update
     deploy: |
       # Drupal 8 currently fails to create config directories automatically during install.
       mkdir -p config/active config/staging
